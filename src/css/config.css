@@ -1,0 +1,35 @@
+/*                 SnipX CSS Config                 */
+/* ................................................ */
+/* Centralize important variables like component
+widths and heights for easy maintence later on. */
+/* ................................................ */
+/* Check out the docs: https://developer.mozilla
+.org/en-US/docs/Web/CSS/Using_CSS_custom_properties */
+/* ................................................ */
+:root {
+    /*                    SnipX Body                    */
+    /* ................................................ */
+    --snipx-body-width: 480px;
+    --snipx-body-height: 580px;
+    --snipx-body-background: var(--snipx-body-background-theme);
+    /* ................................................ */
+    /*                   SnipX Header                   */
+    /* ................................................ */
+    --snipx-header-height: 60px;
+    --snipx-header-padding: 0 0 0 11px;
+    --snipx-header-background: var(--snipx-header-background-theme);
+
+    --snipx-header-title-size: 28px;
+    --snipx-header-title-family: 'Readex Pro', sans-serif;
+    --snipx-header-title-weight: bold;
+    --snipx-header-title-color: var(--snipx-header-title-theme);
+    
+    --snipx-header-icons-size: 24px;
+    --snipx-header-icons-padding: 0 8px;
+    --snipx-header-icons-color: var(--snipx-header-icons-theme);
+    /* ................................................ */
+    /*                   SnipX Editor                   */
+    /* ................................................ */
+    --snipx-editor-family: Consolas, 'Courier New', monospace;
+    /* ................................................ */
+}

@@ -1,0 +1,65 @@
+<html lang="en">
+<!--                   Snipx Head                     -->
+<!-- ................................................ -->
+<head>
+    <meta charset="UTF-8" />
+    <title>SnipX</title>
+    <!--               Google Font Imports                -->
+    <!-- ................................................ -->
+    <!-- Material Icons -->
+    <!-- Readex Pro (500) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Readex+Pro:wght@500&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <!--                SnipX Asset Imports               -->
+    <!-- ................................................ -->
+    <!-- <link rel="stylesheet" href="css/theme.light.css"> -->
+    <script type="module" defer src="index.js"></script>
+</head>
+<!--                   Snipx Body                     -->
+<!-- ................................................ -->
+<body id="snipx-body">
+    <!--                  Snipx Header                    -->
+    <!-- ................................................ -->
+    <header id="snipx-header">
+        <a id="snipx-header-title">SnipX</a>
+        <div id="snipx-header-icons">
+            <span id="snipx-header-turnon-icon" class="material-icons">toggle_on</span>
+            <span id="snipx-header-turnoff-icon" class="material-icons snipx-hide">toggle_off</span>
+            <span id="snipx-header-themelight-icon" class="material-icons snipx-hide">light_mode</span>
+            <span id="snipx-header-themedark-icon" class="material-icons snipx-hide">dark_mode</span>
+            <span id="snipx-header-settings-icon" class="material-icons">account_circle</span>
+        </div>
+    </header>
+    <!--                  Snipx Editor                    -->
+    <!-- ................................................ -->
+    <main id="snipx-editor">
+        <div id="snipx-editor-menu">
+            <div id="snipx-editor-menu-left">
+                <select id="snipx-editor-menu-select" name="types" id="types">
+                    <option id="snipx-editor-menu-css" value="css">CSS</option>
+                    <option id="snipx-editor-menu-js" value="js">JS</option>
+                </select>
+                <div id="snipx-editor-menu-actions">
+                    <span class="material-icons snipx-editor-menu-action" style="padding: 5px 10px;border-right: 1px solid green;">visibility</span>
+                    <span class="material-icons snipx-editor-menu-action" style="padding: 5px 10px;margin-left: -3px;border-right: 1px solid green;">lock</span>
+                </div>
+                <div id="snipx-editor-menu-tablink">docs.github.com/asodnlaskas</div>
+            </div>
+            <div id="snipx-editor-menu-right">
+                <button id="snipx-editor-menu-clearBtn" style="border-right: 1px solid black;">Clear</button>
+                <button id="snipx-editor-menu-saveBtn">Save</button>
+            </div>
+        </div>
+        <!-- Load the textarea using JavaScript to load from LocalStorage -->
+        <textarea id="snipx-editor-textarea-css" class="snipx-editor-textarea snipx-hide" spellcheck="false">/* Add CSS Snippet Here! */</textarea>
+        <textarea id="snipx-editor-textarea-js" class="snipx-editor-textarea snipx-hide" spellcheck="false">/* Add JS Snippet Here! */</textarea>
+    </main>
+    <!--                  Snipx Settings                  -->
+    <!-- ................................................ -->
+    <main id="snipx-settings">
+        <div id="snipx-settings-closer">Settings</div>
+    </main>
+</body>
+</html>
