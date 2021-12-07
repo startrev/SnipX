@@ -4,6 +4,12 @@
 through this single file. The other files just help
 with organizing project variables. */
 /* ................................................ */
+/*                SnipX Helper Classes              */
+/* ................................................ */
+.snipx-hide {
+	display: none;
+}
+/* ................................................ */
 /*                 SnipX Body <body>                */
 /* ................................................ */
 #snipx-body {
@@ -72,6 +78,10 @@ display: none;
     /* font-weight: bold; */
     padding: 18px;
     font-family: var(--snipx-header-title-family);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 250px;
 }
 
 #snipx-editor-menu-right {
@@ -89,6 +99,9 @@ display: none;
     font-family: var(--snipx-header-title-family);
 }
 .snipx-editor-textarea {
+    padding: 8px;
+    font-size: 14px;
+    font-family: var(--snipx-editor-family);
     background: transparent;
     min-width: var(--snipx-body-width);
     max-width: var(--snipx-body-width);

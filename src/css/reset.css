@@ -63,6 +63,3 @@ organized and maintanable. */
 *::after {
   box-sizing: border-box;
 }
-.snipx-hide {
-	display: none;
-}
