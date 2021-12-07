@@ -4,6 +4,7 @@ chrome.tabs.query({
     active: true,
     currentWindow: true
 }, ([currentTab]) => { 
+    // Take only the domain name and remove everything else
     let array = currentTab.url.split('')
     let newArray = []
     let slashCount = 0

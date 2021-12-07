@@ -98,6 +98,11 @@ display: none;
     /* font-weight: bold; */
     font-family: var(--snipx-header-title-family);
 }
+.snipx-editor-menu-action {
+    cursor: pointer;
+    padding: 5px 10px !important;
+    border-right: 1px solid green;
+}
 .snipx-editor-textarea {
     padding: 8px;
     font-size: 14px;

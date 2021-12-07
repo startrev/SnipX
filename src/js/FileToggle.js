@@ -27,11 +27,13 @@ snipxFileType.addEventListener('change', (e) => {
             snipxMenuCSS.setAttribute('selected', true)
             snipxEditorJS.style.display = 'none'
             snipxEditorCSS.style.display = 'block'
+            window.location.reload()
             break
         case 'js':
             snipxMenuJS.setAttribute('selected', true)
             snipxEditorCSS.style.display = 'none'
             snipxEditorJS.style.display = 'block'
+            window.location.reload()
             break
         default: 
             return undefined

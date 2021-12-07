@@ -42,8 +42,10 @@
                     <option id="snipx-editor-menu-js" value="js">JS</option>
                 </select>
                 <div id="snipx-editor-menu-actions">
-                    <span class="material-icons snipx-editor-menu-action" style="padding: 5px 10px;border-right: 1px solid green;">visibility</span>
-                    <span class="material-icons snipx-editor-menu-action" style="padding: 5px 10px;margin-left: -3px;border-right: 1px solid green;">lock</span>
+                    <span id="snipx-editor-action-shown" class="material-icons snipx-editor-menu-action">visibility</span>
+                    <span id="snipx-editor-action-hidden" class="material-icons snipx-editor-menu-action snipx-hide">visibility_off</span>
+                    <span id="snipx-editor-action-locked" class="material-icons snipx-editor-menu-action" style="margin-left: -3px;">lock</span>
+                    <span id="snipx-editor-action-unlocked" class="material-icons snipx-editor-menu-action" style="margin-left: -3px;">no_encryption</span>
                 </div>
                 <div id="snipx-editor-menu-tablink"></div>
             </div>
@@ -52,9 +54,18 @@
                 <button id="snipx-editor-menu-saveBtn">Save</button>
             </div>
         </div>
-        <!-- Load the textarea using JavaScript to load from LocalStorage -->
-        <textarea id="snipx-editor-textarea-css" class="snipx-editor-textarea snipx-hide" spellcheck="false">/* Add CSS Snippet Here! */</textarea>
-        <textarea id="snipx-editor-textarea-js" class="snipx-editor-textarea snipx-hide" spellcheck="false">/* Add JS Snippet Here! */</textarea>
+        <!--                Snipx CSS Editor                  -->
+        <!-- ................................................ -->
+        <textarea 
+            id="snipx-editor-textarea-css" 
+            class="snipx-editor-textarea snipx-hide" 
+            spellcheck="false">/* Add CSS Snippet Here! */</textarea>
+        <!--                Snipx JS Editor                   -->
+        <!-- ................................................ -->
+        <textarea 
+            id="snipx-editor-textarea-js" 
+            class="snipx-editor-textarea snipx-hide" 
+            spellcheck="false">/* Add JS Snippet Here! */</textarea>
     </main>
     <!--                  Snipx Settings                  -->
     <!-- ................................................ -->
