@@ -1,3 +1,4 @@
+import './js/InsertURL.js'
 import './js/ThemeToggle.js'
 import './js/FileToggle.js'
 import './js/SettingsOpen.js'
