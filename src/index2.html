@@ -2,28 +2,41 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Document</title>
+    <title>SnipX</title>
+    <!-- SnipX Imports -->
     <link rel="stylesheet" href="style.css">
+    <script defer src="main.js"></script>
+    <!-- Google Fonts Imports -->
+    <!-- Material Icons and Readex Pro Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Readex+Pro:wght@500&display=swap">
-    <script defer src="main.js"></script>
 </head>
 <body>
+    <!-- Header Component -->
+    <!-- The header is displayed on every Section/Page -->
     <header>
+        <!-- Dynamically load the title through JS -->
+        <!-- Give user option to rename extension -->
         <a>SnipX</a>
         <div>
+            <!-- Load State and Theme Icons dynamically through JS -->
             <span id="state_button" class="material-icons">...</span>
             <span id="theme_button" class="material-icons">...</span>
             <span id="settings_button" class="material-icons">account_circle</span>
         </div>
     </header>
 
+    <!-- Both Sections/Pages are Hidden by default -->
+    <!-- Dynamically displayed through JS -->
+
+    <!-- Editor Page -->
     <section id="editor_page">
         <h1>Editor</h1>
     </section>
 
+    <!-- Settings Page -->
     <section id="settings_page">
         <h1>Settings</h1>
     </section>

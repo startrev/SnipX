@@ -22,16 +22,20 @@ chrome.tabs.query({
     active: true, 
     currentWindow: true 
 }, ([currentTab]) => { 
+    // Create an array out of the 'currentTab.url'
     let array = currentTab.url.split('')
     let newArray = []
+    // We stop counting 'slashCount' after 3 because we know the 
+    // base domain always lives within 3 slashes: 'https:[/][/]google.com[/]' 
     let slashCount = 0
+    // Loop through the entire url
     for(let i = 0; i <= array.length; i++) { 
-        newArray.push(array[i])
         if(array[i] === '/') slashCount++
         if(slashCount === 3) break
+        // Push valid characters into 'newArray'
+        newArray.push(array[i])
     }
     let currentTabURL = newArray.join('')
-    currentTabURL = currentTabURL.substr(0, currentTabURL.length - 1)
     // Insert URL directly into localStorage
     localStorage.setItem('SnipxTabURL', currentTabURL)
 })
@@ -44,29 +48,67 @@ Object.entries(defaultStorage).forEach(([key, value]) => {
 // Load UI using values in localStorage
 window.addEventListener('load', (e) => {
     // Update STATE render
-    if(localStorage.getItem('SnipxIsActive') === 'true') {
-        stateButton.innerText = 'toggle_on'
-    }
-    if(localStorage.getItem('SnipxIsActive') === 'false') {
-        stateButton.innerText = 'toggle_off'
+    switch(localStorage.getItem('SnipxIsActive')) {
+        case 'true': stateButton.innerText = 'toggle_on'; break
+        case 'false': stateButton.innerText = 'toggle_off'; break
     }
     // Update THEME render
-    if(localStorage.getItem('SnipxTheme') === 'dark') {
-        // Display light mode icon
-        themeButton.innerText = 'light_mode'
-        // Load dark mode theme
-    }
-    if(localStorage.getItem('SnipxTheme') === 'light') {
-        // Display dark mode icon
-        themeButton.innerText = 'dark_mode'
-        // Load light mode theme
+    switch(localStorage.getItem('SnipxTheme')) {
+        case 'dark': themeButton.innerText = 'light_mode'; break
+        case 'light': themeButton.innerText = 'dark_mode'; break
     }
     // Update SECTION render
-    if(localStorage.getItem('SnipxPage') === 'editor') {
-        editorPage.style.display = 'flex'
+    switch(localStorage.getItem('SnipxPage')) {
+        case 'editor': editorPage.style.display = 'flex'; break
+        case 'settings': settingsPage.style.display = 'flex'; break
     }
-    if(localStorage.getItem('SnipxPage') === 'settings') {
-        settingsPage.style.display = 'flex'
-    }
+}, false)
 
+// Load Event Listeners towards the end of the file
+// STATE
+stateButton.addEventListener('click', (e) => {
+    switch(localStorage.getItem('SnipxIsActive')) {
+        case 'true':
+            localStorage.setItem('SnipxIsActive', 'false')
+            stateButton.innerText = 'toggle_off'
+            // Remove all rendered snippets from the browser
+            break
+        case 'false':
+            localStorage.setItem('SnipxIsActive', 'true')
+            stateButton.innerText = 'toggle_on'
+            // Render all snippets to the browser
+            break   
+    }
+}, false)
+// THEME
+themeButton.addEventListener('click', (e) => {
+    switch(localStorage.getItem('SnipxTheme')) {
+        case 'dark':
+            localStorage.setItem('SnipxTheme', 'light')
+            themeButton.innerText = 'dark_mode'
+            // Load light theme
+            break
+        case 'light':
+            localStorage.setItem('SnipxTheme', 'dark')
+            themeButton.innerText = 'light_mode'
+            // Load dark theme
+            break   
+    }
+}, false)
+// SETTINGS
+settingsButton.addEventListener('click', (e) => {
+    switch(localStorage.getItem('SnipxPage')) {
+        // Load editor page
+        case 'editor':
+            localStorage.setItem('SnipxPage', 'settings')
+            editorPage.style.display = 'none'
+            settingsPage.style.display = 'flex'
+            break
+        // Load settings page
+        case 'settings':
+            localStorage.setItem('SnipxPage', 'editor')
+            settingsPage.style.display = 'none'
+            editorPage.style.display = 'flex'
+            break   
+    }
 }, false)
