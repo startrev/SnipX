@@ -3,6 +3,11 @@ const stateButton = document.getElementById('state_button')
 const themeButton = document.getElementById('theme_button')
 const settingsButton = document.getElementById('settings_button')
 
+// Editor Actions
+const editorType = document.getElementById('editor_type')
+const editorCSS = document.getElementById('editor_css')
+const editorJS = document.getElementById('editor_js')
+
 // Snipx Pages
 const editorPage = document.getElementById('editor_page')
 const settingsPage = document.getElementById('settings_page')
@@ -47,6 +52,8 @@ Object.entries(defaultStorage).forEach(([key, value]) => {
 
 // Load UI using values in localStorage
 window.addEventListener('load', (e) => {
+    //            HEADER LOAD
+    // .................................
     // Update STATE render
     switch(localStorage.getItem('SnipxIsActive')) {
         case 'true': stateButton.innerText = 'toggle_on'; break
@@ -62,53 +69,90 @@ window.addEventListener('load', (e) => {
         case 'editor': editorPage.style.display = 'flex'; break
         case 'settings': settingsPage.style.display = 'flex'; break
     }
+    //           EDITOR LOAD
+    // ................................
+    // Update EDITOR render
+    switch(localStorage.getItem('SnipxEditor')) {
+        case 'css': 
+            // console.log(editorType.childNodes)
+            editorType.childNodes.forEach(n => {
+                if(n.nodeName === 'OPTION' && n.value === 'css') {
+                    n.setAttribute('selected', null)
+                    editorCSS.style.display = 'flex'
+                } 
+            })
+            break
+        case 'js': 
+            editorType.childNodes.forEach(n => {
+                if(n.nodeName === 'OPTION' && n.value === 'js') {
+                    n.setAttribute('selected', null)
+                    editorJS.style.display = 'flex'
+                } 
+            })
+            break
+    }
+    //            HEADER UPDATE
+    // .................................
+    // Load Event Listeners towards the end of the file
+    // STATE
+    stateButton.addEventListener('click', (e) => {
+        switch(localStorage.getItem('SnipxIsActive')) {
+            case 'true':
+                localStorage.setItem('SnipxIsActive', 'false')
+                stateButton.innerText = 'toggle_off'
+                // Remove all rendered snippets from the browser
+                break
+            case 'false':
+                localStorage.setItem('SnipxIsActive', 'true')
+                stateButton.innerText = 'toggle_on'
+                // Render all snippets to the browser
+                break   
+        }
+    }, false)
+    // THEME
+    themeButton.addEventListener('click', (e) => {
+        switch(localStorage.getItem('SnipxTheme')) {
+            case 'dark':
+                localStorage.setItem('SnipxTheme', 'light')
+                themeButton.innerText = 'dark_mode'
+                // Load light theme
+                break
+            case 'light':
+                localStorage.setItem('SnipxTheme', 'dark')
+                themeButton.innerText = 'light_mode'
+                // Load dark theme
+                break   
+        }
+    }, false)
+    // SETTINGS
+    settingsButton.addEventListener('click', (e) => {
+        switch(localStorage.getItem('SnipxPage')) {
+            // Load editor page
+            case 'editor':
+                localStorage.setItem('SnipxPage', 'settings')
+                editorPage.style.display = 'none'
+                editorCSS.style.display = 'none'
+                editorJS.style.display = 'none'
+                settingsPage.style.display = 'flex'
+                break
+            // Load settings page
+            case 'settings':
+                localStorage.setItem('SnipxPage', 'editor')
+                switch(localStorage.getItem('SnipxEditor')) {
+                    case 'css': editorCSS.style.display = 'block'; break
+                    case 'js': editorJS.style.display = 'block'; break
+                }
+                settingsPage.style.display = 'none'
+                editorPage.style.display = 'flex'
+                break   
+        }
+    }, false)
+    //            Editor UPDATE
+    // .................................
+    // TYPE
+    editorType.addEventListener('change', (e) => {
+        localStorage.setItem('SnipxEditor', editorType.value)
+        // Change editor type
+    }, false)
 }, false)
 
-// Load Event Listeners towards the end of the file
-// STATE
-stateButton.addEventListener('click', (e) => {
-    switch(localStorage.getItem('SnipxIsActive')) {
-        case 'true':
-            localStorage.setItem('SnipxIsActive', 'false')
-            stateButton.innerText = 'toggle_off'
-            // Remove all rendered snippets from the browser
-            break
-        case 'false':
-            localStorage.setItem('SnipxIsActive', 'true')
-            stateButton.innerText = 'toggle_on'
-            // Render all snippets to the browser
-            break   
-    }
-}, false)
-// THEME
-themeButton.addEventListener('click', (e) => {
-    switch(localStorage.getItem('SnipxTheme')) {
-        case 'dark':
-            localStorage.setItem('SnipxTheme', 'light')
-            themeButton.innerText = 'dark_mode'
-            // Load light theme
-            break
-        case 'light':
-            localStorage.setItem('SnipxTheme', 'dark')
-            themeButton.innerText = 'light_mode'
-            // Load dark theme
-            break   
-    }
-}, false)
-// SETTINGS
-settingsButton.addEventListener('click', (e) => {
-    switch(localStorage.getItem('SnipxPage')) {
-        // Load editor page
-        case 'editor':
-            localStorage.setItem('SnipxPage', 'settings')
-            editorPage.style.display = 'none'
-            settingsPage.style.display = 'flex'
-            break
-        // Load settings page
-        case 'settings':
-            localStorage.setItem('SnipxPage', 'editor')
-            settingsPage.style.display = 'none'
-            editorPage.style.display = 'flex'
-            break   
-    }
-}, false)

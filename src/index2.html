@@ -16,10 +16,10 @@
 <body>
     <!-- Header Component -->
     <!-- The header is displayed on every Section/Page -->
-    <header>
+    <header id="header">
         <!-- Dynamically load the title through JS -->
         <!-- Give user option to rename extension -->
-        <a>SnipX</a>
+        <a id="header_title">SnipX</a>
         <div>
             <!-- Load State and Theme Icons dynamically through JS -->
             <span id="state_button" class="material-icons">...</span>
@@ -32,9 +32,29 @@
     <!-- Dynamically displayed through JS -->
 
     <!-- Editor Page -->
-    <section id="editor_page">
-        <h1>Editor</h1>
-    </section>
+    <div id="editor_page_container">
+        <div id="editor_page">
+            <div id="editor_menu">
+                <div id="editor_actions">
+                    <select value="css" id="editor_type">
+                        <option value="css">css</option>
+                        <option value="js">js</option>
+                    </select>
+                    <div>
+                        <span id="editor_render" class="material-icons">...</span>
+                        <span id="editor_lock" class="material-icons">...</span>
+                    </div>
+                    <a id="editor_taburl">...</a>
+                </div>
+                <div id="editor_events">
+                    <a id="editor_clear">Clear</a>
+                    <a id="editor_save">Save</a>
+                </div>
+            </div>
+        </div>
+        <textarea id="editor_css">/* CSS Editor */</textarea>
+        <textarea id="editor_js">// JS Editor</textarea>
+    </div>
 
     <!-- Settings Page -->
     <section id="settings_page">

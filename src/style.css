@@ -11,7 +11,9 @@
     background: inherit;
     list-style-type: none;
 }
-
+.material-icons {
+    color: white;
+}
 /* Custom properties */
 :root {
     --width: 480px;
@@ -20,7 +22,7 @@
     /* set font variables here */
     
     /* set dark theme variables here */
-    --color-dark1: green;
+    --color-dark1: gray;
 }
 
 /* Main Styles */
@@ -31,23 +33,39 @@ body {
 }
 
 /* Header */
-header, header div {
+#header, 
+#header div, 
+#editor_menu, 
+#editor_actions {
     display: flex;
     align-items: center;
 }
-header {
-    background: yellow;
+#header, 
+#editor_menu {
     justify-content: space-between;
 }
-header a {
+#header {
+    background: black;
+}
+#header_title {
     font-size: 20px;
-    color: red;
+    color: blue;
 }
-header div {
-    justify-content: center;
-}
-
 /* Sections */
-section {
+section, 
+textarea {
     display: none;
+}
+#editor_menu {
+    width: 100%;
+    background: red;
+}
+#editor_actions {
+    outline: 1px solid lime;
+}
+#editor_events {
+    outline: 1px solid lime;
+}
+#editor_page {
+    /* display: block !important; */
 }
