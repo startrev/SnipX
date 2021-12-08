@@ -1,0 +1,50 @@
+/* Simple reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: inherit;
+    font-weight: inherit;
+    font-family: inherit;
+    text-decoration: none;
+    color: inherit;
+    background: inherit;
+    list-style-type: none;
+}
+
+/* Custom properties */
+:root {
+    --width: 480px;
+    --height: 580px;
+
+    --color-dark1: green;
+}
+
+/* Main Styles */
+body {
+    width: var(--width);
+    height: var(--height);
+    background: var(--color-dark1);
+}
+
+/* Header */
+header, header div {
+    display: flex;
+    align-items: center;
+}
+header {
+    background: yellow;
+    justify-content: space-between;
+}
+header a {
+    font-size: 20px;
+    color: red;
+}
+header div {
+    justify-content: center;
+}
+
+/* Sections */
+section {
+    display: none;
+}
