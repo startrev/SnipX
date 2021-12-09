@@ -66,6 +66,14 @@ textarea {
 #editor_events {
     outline: 1px solid lime;
 }
-#editor_page {
-    /* display: block !important; */
+.editor {
+    padding: 8px;
+    font-size: 14px;
+    font-family: Consolas, 'Courier New', monospace;
+    background: black;
+    width: 480px;
+    height: 490px;
+    border: 0;
+    resize: none;
+    color: #cccccc;
 }
