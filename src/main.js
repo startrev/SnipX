@@ -1,16 +1,19 @@
-// Header Menu Icons/Buttons
+// Header IDS
 const stateButton = document.getElementById('state_button')
 const themeButton = document.getElementById('theme_button')
 const settingsButton = document.getElementById('settings_button')
 
-// Editor Actions
+// Editor IDS
 const editorType = document.getElementById('editor_type')
 const editorCSS = document.getElementById('editor_css')
 const editorJS = document.getElementById('editor_js')
+const editorTaburl = document.getElementById('editor_taburl')
+const editorRender = document.getElementById('editor_render')
+const editorLock = document.getElementById('editor_lock')
 
-// Snipx Pages
-const editorPage = document.getElementById('editor_page_container')
-const settingsPage = document.getElementById('settings_page_container')
+// Page IDS
+const editorPage = document.getElementById('editor_page')
+const settingsPage = document.getElementById('settings_page')
 
 // Create localStorage key/value if not there already
 let defaultStorage = {
@@ -43,6 +46,7 @@ chrome.tabs.query({
     let currentTabURL = newArray.join('')
     // Insert URL directly into localStorage
     localStorage.setItem('SnipxTabURL', currentTabURL)
+    editorTaburl.innerText = currentTabURL
 })
 
 // Set localStorage defaultStorage values
@@ -107,6 +111,14 @@ window.addEventListener('load', (e) => {
             })
             break
     }
+    switch(localStorage.getItem('SnipxEditorRender')) {
+        case 'true': editorRender.innerText = 'visibility'; break
+        case 'false': editorRender.innerText = 'visibility_off'; break
+    }
+    switch(localStorage.getItem('SnipxEditorLock')) {
+        case 'true': editorLock.innerText = 'lock'; break
+        case 'false': editorLock.innerText = 'no_encryption'; break
+    }
     //            HEADER UPDATE
     // .................................
     // Load Event Listeners towards the end of the file
@@ -168,7 +180,44 @@ window.addEventListener('load', (e) => {
     // TYPE
     editorType.addEventListener('change', (e) => {
         localStorage.setItem('SnipxEditor', editorType.value)
-        // Change editor type
+        switch(editorType.value) {
+            case 'css':
+                editorJS.style.display = 'none'
+                editorCSS.style.display = 'block'
+                break
+            case 'js':
+                editorCSS.style.display = 'none'
+                editorJS.style.display = 'block'
+                break
+        }
+    }, false)
+    editorRender.addEventListener('click', (e) => {
+        switch(localStorage.getItem('SnipxEditorRender')) {
+            case 'true':
+                localStorage.setItem('SnipxEditorRender', 'false')
+                // insert current editor code into TabURL
+                window.location.reload()
+                break
+            case 'false':
+                localStorage.setItem('SnipxEditorRender', 'true')
+                // remove current editor code from TabURL
+                window.location.reload()
+                break
+        }
+    }, false)
+    editorLock.addEventListener('click', (e) => {
+        switch(localStorage.getItem('SnipxEditorLock')) {
+            case 'true':
+                localStorage.setItem('SnipxEditorLock', 'false')
+                // unlock the current editor
+                window.location.reload()
+                break
+            case 'false':
+                localStorage.setItem('SnipxEditorLock', 'true')
+                // lock the current editor
+                window.location.reload()
+                break
+        }
     }, false)
 }, false)
 
