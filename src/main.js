@@ -9,8 +9,8 @@ const editorCSS = document.getElementById('editor_css')
 const editorJS = document.getElementById('editor_js')
 
 // Snipx Pages
-const editorPage = document.getElementById('editor_page')
-const settingsPage = document.getElementById('settings_page')
+const editorPage = document.getElementById('editor_page_container')
+const settingsPage = document.getElementById('settings_page_container')
 
 // Create localStorage key/value if not there already
 let defaultStorage = {
@@ -66,8 +66,14 @@ window.addEventListener('load', (e) => {
     }
     // Update SECTION render
     switch(localStorage.getItem('SnipxPage')) {
-        case 'editor': editorPage.style.display = 'flex'; break
-        case 'settings': settingsPage.style.display = 'flex'; break
+        case 'editor': 
+            settingsPage.style.display = 'none'
+            editorPage.style.display = 'block'
+            break
+        case 'settings': 
+            editorPage.style.display = 'none'
+            settingsPage.style.display = 'block'
+            break
     }
     //           EDITOR LOAD
     // ................................
@@ -76,16 +82,26 @@ window.addEventListener('load', (e) => {
         case 'css': 
             // console.log(editorType.childNodes)
             editorType.childNodes.forEach(n => {
-                if(n.nodeName === 'OPTION' && n.value === 'css') {
+                if(
+                    n.nodeName === 'OPTION' && 
+                    n.value === 'css' && 
+                    localStorage.getItem('SnipxPage') === 'editor'
+                ) {
                     n.setAttribute('selected', null)
+                    editorJS.style.display = 'none'
                     editorCSS.style.display = 'flex'
                 } 
             })
             break
         case 'js': 
             editorType.childNodes.forEach(n => {
-                if(n.nodeName === 'OPTION' && n.value === 'js') {
+                if(
+                    n.nodeName === 'OPTION' && 
+                    n.value === 'js' &&
+                    localStorage.getItem('SnipxPage') === 'editor'
+                ) {
                     n.setAttribute('selected', null)
+                    editorCSS.style.display = 'none'
                     editorJS.style.display = 'flex'
                 } 
             })
@@ -133,7 +149,7 @@ window.addEventListener('load', (e) => {
                 editorPage.style.display = 'none'
                 editorCSS.style.display = 'none'
                 editorJS.style.display = 'none'
-                settingsPage.style.display = 'flex'
+                settingsPage.style.display = 'block'
                 break
             // Load settings page
             case 'settings':
@@ -143,7 +159,7 @@ window.addEventListener('load', (e) => {
                     case 'js': editorJS.style.display = 'block'; break
                 }
                 settingsPage.style.display = 'none'
-                editorPage.style.display = 'flex'
+                editorPage.style.display = 'block'
                 break   
         }
     }, false)
