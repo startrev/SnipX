@@ -1,76 +1,67 @@
+<!DOCTYPE html>
 <html lang="en">
-<!--                   Snipx Head                     -->
-<!-- ................................................ -->
 <head>
-    <meta charset="UTF-8" />
+    <meta charset="UTF-8">
     <title>SnipX</title>
-    <!--               Google Font Imports                -->
-    <!-- ................................................ -->
-    <!-- Material Icons -->
-    <!-- Readex Pro (500) -->
+    <!-- SnipX Imports -->
+    <link rel="stylesheet" href="style.css">
+    <script defer src="main.js"></script>
+    <!-- Google Fonts Imports -->
+    <!-- Material Icons and Readex Pro Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Readex+Pro:wght@500&display=swap">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <!--                SnipX Asset Imports               -->
-    <!-- ................................................ -->
-    <!-- <link rel="stylesheet" href="css/theme.light.css"> -->
-    <script type="module" defer src="index.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Readex+Pro:wght@500&display=swap">
 </head>
-<!--                   Snipx Body                     -->
-<!-- ................................................ -->
-<body id="snipx-body">
-    <!--                  Snipx Header                    -->
-    <!-- ................................................ -->
-    <header id="snipx-header">
-        <a id="snipx-header-title">SnipX</a>
-        <div id="snipx-header-icons">
-            <span id="snipx-header-turnon-icon" class="material-icons">toggle_on</span>
-            <span id="snipx-header-turnoff-icon" class="material-icons snipx-hide">toggle_off</span>
-            <span id="snipx-header-themelight-icon" class="material-icons snipx-hide">light_mode</span>
-            <span id="snipx-header-themedark-icon" class="material-icons snipx-hide">dark_mode</span>
-            <span id="snipx-header-settings-icon" class="material-icons">account_circle</span>
+<body>
+    <!-- Header Component -->
+    <!-- The header is displayed on every Section/Page -->
+    <header id="header">
+        <!-- Dynamically load the title through JS -->
+        <!-- Give user option to rename extension -->
+        <a id="header_title">SnipX</a>
+        <div>
+            <!-- Load State and Theme Icons dynamically through JS -->
+            <span id="state_button" class="material-icons">...</span>
+            <span id="theme_button" class="material-icons">...</span>
+            <span id="settings_button" class="material-icons">account_circle</span>
         </div>
     </header>
-    <!--                  Snipx Editor                    -->
-    <!-- ................................................ -->
-    <main id="snipx-editor">
-        <div id="snipx-editor-menu">
-            <div id="snipx-editor-menu-left">
-                <select id="snipx-editor-menu-select" name="types" id="types">
-                    <option id="snipx-editor-menu-css" value="css">CSS</option>
-                    <option id="snipx-editor-menu-js" value="js">JS</option>
-                </select>
-                <div id="snipx-editor-menu-actions">
-                    <span id="snipx-editor-action-shown" class="material-icons snipx-editor-menu-action">visibility</span>
-                    <span id="snipx-editor-action-hidden" class="material-icons snipx-editor-menu-action snipx-hide">visibility_off</span>
-                    <span id="snipx-editor-action-locked" class="material-icons snipx-editor-menu-action" style="margin-left: -3px;">lock</span>
-                    <span id="snipx-editor-action-unlocked" class="material-icons snipx-editor-menu-action" style="margin-left: -3px;">no_encryption</span>
+
+    <!-- Both Sections/Pages are Hidden by default -->
+    <!-- Dynamically displayed through JS -->
+
+    <!-- Editor Page -->
+    <div id="editor_page">
+        <div>
+            <div id="editor_menu">
+                <div id="editor_actions">
+                    <select value="css" id="editor_type">
+                        <option value="css">CSS</option>
+                        <option value="js">JS</option>
+                    </select>
+                    <div>
+                        <span id="editor_render" class="material-icons">...</span>
+                        <span id="editor_lock" class="material-icons">...</span>
+                    </div>
+                    <a id="editor_taburl">...</a>
                 </div>
-                <div id="snipx-editor-menu-tablink"></div>
-            </div>
-            <div id="snipx-editor-menu-right">
-                <button id="snipx-editor-menu-clearBtn" style="border-right: 1px solid black;">Clear</button>
-                <button id="snipx-editor-menu-saveBtn">Save</button>
+                <div id="editor_events">
+                    <a id="editor_clear">Clear</a>
+                    <a id="editor_save">Save</a>
+                </div>
             </div>
         </div>
-        <!--                Snipx CSS Editor                  -->
-        <!-- ................................................ -->
-        <textarea 
-            id="snipx-editor-textarea-css" 
-            class="snipx-editor-textarea snipx-hide" 
-            spellcheck="false">/* Add CSS Snippet Here! */</textarea>
-        <!--                Snipx JS Editor                   -->
-        <!-- ................................................ -->
-        <textarea 
-            id="snipx-editor-textarea-js" 
-            class="snipx-editor-textarea snipx-hide" 
-            spellcheck="false">/* Add JS Snippet Here! */</textarea>
-    </main>
-    <!--                  Snipx Settings                  -->
-    <!-- ................................................ -->
-    <main id="snipx-settings">
-        <div id="snipx-settings-closer">Settings</div>
-    </main>
+        <textarea id="editor_css" class="editor">/* CSS Editor */</textarea>
+        <textarea id="editor_js" class="editor">// JS Editor</textarea>
+    </div>
+
+    <!-- Settings Page -->
+    <section id="settings_page">
+        <div>
+            <h1>Settings</h1>
+        </div>
+    </section>
+
 </body>
 </html>
