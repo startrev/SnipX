@@ -1,6 +1,6 @@
 {
     "name": "SnipX",
-    "version": "0.0.0.1",
+    "version": "0.1.0",
     "manifest_version": 2,
     "description": "...",
     "browser_action": {
@@ -9,5 +9,11 @@
     "permissions": [
       "activeTab",
       "tabs"
-    ] 
+    ],
+    "content_scripts": [
+      {
+        "matches": ["<all_urls>"],
+        "js": ["src/content.js"]
+      }
+    ]
   }
