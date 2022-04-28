@@ -6,8 +6,12 @@
     "action": {
       "default_popup": "src/index.html"
     },
+    "background": {
+      "service_worker": "src/background.js"
+    },
     "permissions": [
       "activeTab",
+      "scripting",
       "tabs"
     ],
     "content_scripts": [
