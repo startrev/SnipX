@@ -1,7 +1,8 @@
 const profile = 
-`<main>
+`<main id="profile">
     <div>
-        <div>profile page</div>
+        <h1>Profile</h1>
+        <h2>available next update...</h2>
     </div>
 </main>`
 

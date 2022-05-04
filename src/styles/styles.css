@@ -90,7 +90,7 @@ main aside { background: var(--color-primary) }
 body, header, 
 textarea, #auth { background: var(--color-secondary) }
 
-a, p, button, 
+a, p, button, #profile,
 textarea, .material-icons, 
 #editor-actions select { color:var(--color-text) }
 
@@ -109,12 +109,14 @@ a, p, button { font-family:var(--fontfamily-primary) }
 textarea { font-family: var(--fontfamily-editor) }
 
 /* Font Size */
-header a, #auth p { font-size: var(--fontsize-logo) }
+header a, #auth p, 
+#profile h1 { font-size: var(--fontsize-logo) }
 
 #auth button, textarea { font-size: var(--fontsize-text) }
 
 #auth a, #editor-actions p,
-#editor-actions select { font-size: var(--fontsize-link) }
+#editor-actions select,
+#profile h2 { font-size: var(--fontsize-link) }
 
 .material-icons { font-size: var(--fontsize-icon) }
 
@@ -122,14 +124,15 @@ header a, #auth p { font-size: var(--fontsize-logo) }
 
 /* Font Bold */
 header a, .menu-button,
-#editor-actions select { font-weight: var(--fontweight-bold) }
+#editor-actions select, 
+#profile h1 { font-weight: var(--fontweight-bold) }
 
 /* Padding */
 #auth p { padding-bottom:  var(--padding-editor) }
 
 .menu-button { padding: var(--padding-button-alt) }
 
-textarea { padding: var(--padding-editor) }
+textarea, #profile { padding: var(--padding-editor) }
 
 header a, .material-icons { padding: var(--padding-icon) }
 
@@ -201,6 +204,8 @@ textarea {
     min-width: 60px }
 
 #editor-actions p { margin-left: 8px }
+
+#profile h1 { margin-bottom: 8px }
 
 .menu-button { margin-left: 4px }
 /* STYLES END*/
