@@ -1,0 +1,206 @@
+/* RESET */
+/* -------------------------------------- */
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+	text-decoration: none;
+	list-style-type: none;
+    box-sizing: border-box;
+	font-family: Arial, Helvetica, sans-serif }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section { display: block }
+
+body { line-height: 1 }
+
+ol, ul { list-style: none }
+
+blockquote, q { quotes: none }
+
+blockquote:before, blockquote:after,
+q:before, q:after { content: ''; content: none }
+
+table { border-collapse: collapse; border-spacing: 0 }
+
+/* My additions */
+* {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none }
+
+a,button,select { cursor: pointer }
+
+button { background: none; border: none }
+/* RESET END */
+
+/* ICONS */
+/* -------------------------------------- */
+@font-face {
+    font-family: 'Material Icons';
+    font-style: normal;
+    font-weight: 400;
+    src: url("/src/assets/flUhRq6tzZclQEJ-Vdg-IuiaDsNc.woff2") format('woff2');
+}
+
+.material-icons {
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    line-height: 1;
+    letter-spacing: normal;
+    text-transform: none;
+    display: inline-block;
+    white-space: nowrap;
+    word-wrap: normal;
+    direction: ltr;
+    -webkit-font-smoothing: antialiased;
+    cursor: pointer;
+}
+/* ICONS END */
+
+/* THEME */
+/* -------------------------------------- */
+/* Color */
+main aside { background: var(--color-primary) }
+
+body, header, 
+textarea, #auth { background: var(--color-secondary) }
+
+a, p, button, 
+textarea, .material-icons, 
+#editor-actions select { color:var(--color-text) }
+
+header a:hover, button:hover,
+.material-icons:hover { 
+    background: var(--color-hover) !important;
+    outline: none !important }
+
+::-webkit-scrollbar-track { background:  var(--color-secondary) }
+::-webkit-scrollbar-thumb { background: var(--color-primary) }
+
+/* Font Family */
+a, p, button { font-family:var(--fontfamily-primary) }
+
+#editor-actions select, 
+textarea { font-family: var(--fontfamily-editor) }
+
+/* Font Size */
+header a, #auth p { font-size: var(--fontsize-logo) }
+
+#auth button, textarea { font-size: var(--fontsize-text) }
+
+#auth a, #editor-actions p,
+#editor-actions select { font-size: var(--fontsize-link) }
+
+.material-icons { font-size: var(--fontsize-icon) }
+
+.menu-button { font-size: var(--fontsize-menu-button) }
+
+/* Font Bold */
+header a, .menu-button,
+#editor-actions select { font-weight: var(--fontweight-bold) }
+
+/* Padding */
+#auth p { padding-bottom:  var(--padding-editor) }
+
+.menu-button { padding: var(--padding-button-alt) }
+
+textarea { padding: var(--padding-editor) }
+
+header a, .material-icons { padding: var(--padding-icon) }
+
+header { padding: var(--padding-container) }
+
+button { padding: var(--padding-button) }
+
+main aside { padding: var(--padding-editor-menu) }
+
+#editor-actions select,
+#editor-actions span { padding: var(--padding-select) }
+
+/* Border */
+header a, button, .material-icons,
+#editor-actions select { border-radius: var(--border-radius) }
+
+button, #editor-actions select { outline: var(--border) }
+
+header, main aside { border-bottom: var(--border-alt) }
+/* THEME END */
+
+/* STYLES */
+/* -------------------------------------- */
+::-webkit-scrollbar { width: 12px }
+
+body { 
+    width: 450px;
+    height: 546px }
+
+header, #auth {
+    display: flex;
+    align-items: center }
+
+header { justify-content: space-between}
+    
+main { height: 492px }
+
+#auth { 
+    justify-content: center; 
+    flex-direction: column }
+
+#auth a { text-decoration: underline }
+
+#editor { 
+    display: flex; 
+    flex-direction: column }
+
+main aside {
+    display: flex;
+    align-items: center;
+    justify-content: space-between } 
+
+textarea {
+    width: 418px;
+    height: 417px;
+    resize: none;
+    border: none;
+    outline: none;
+    overflow-y: scroll !important }
+
+#editor-actions {
+    display: flex;
+    align-items: center }
+
+#editor-actions select {
+    border: none;
+    background: none;
+    margin-right: 8px;
+    min-width: 60px }
+
+#editor-actions p { margin-left: 8px }
+
+.menu-button { margin-left: 4px }
+/* STYLES END*/

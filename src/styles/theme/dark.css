@@ -1,0 +1,34 @@
+:root {
+    /* Color */
+    --color-primary: #1b1e2b;
+    --color-secondary: #292d3e;
+    --color-text: #757ca1;
+    --color-hover: #11131b;
+
+    /* Font */
+    --fontfamily-primary: Arial;
+    --fontfamily-seconadry: serif;
+    --fontfamily-editor: monospace;
+
+    --fontsize-icon: 21px;
+    --fontsize-logo: 20px;
+    --fontsize-text: 16px;
+    --fontsize-link: 14px;
+    --fontsize-menu-button: 11px;
+
+    --fontweight-bold: 600;
+
+    /* Border */
+    --border-radius: 4px;
+    --border: 1px solid #757ca1;
+    --border-alt: 1px solid #11131b;
+    
+    /* Spacing */
+    --padding-select: 2px;
+    --padding-icon: 6px;
+    --padding-button: 6px 12px;
+    --padding-button-alt: 4px 9px;
+    --padding-container: 10px;
+    --padding-editor: 16px;
+    --padding-editor-menu: 6px 16px;
+}

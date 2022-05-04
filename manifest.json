@@ -1,19 +1,21 @@
 {
     "name": "SnipX",
-    "version": "0.2.0",
+    "version": "0.3.0",
     "manifest_version": 3,
     "description": "...",
-    "action": {
-      "default_popup": "src/index.html"
-    },
-    "background": {
-      "service_worker": "src/background.js"
-    },
+    "action": {"default_popup": "src/index.html"},
+    "background": {"service_worker": "src/background.js"},
     "permissions": [
+      "unlimitedStorage",
       "activeTab",
       "scripting",
+      "storage",
       "tabs"
     ],
+    "web_accessible_resources": [{
+      "resources": ["config.json"],
+      "matches": ["<all_urls>"]
+    }],
     "content_scripts": [
       {
         "matches": ["<all_urls>"],

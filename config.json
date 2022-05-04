@@ -1,0 +1,17 @@
+{
+    "server": false,
+    "port": 2323,
+    "tabURL": "",
+    "state": true,
+    "theme": "dark",
+    "page": "auth",
+    "editor": "css",
+    "editorTab": 2,
+    "editorState": true,
+    "editorLock": false,
+    "editorText": {
+        "css": "/* CSS Editor */",
+        "js": "// JS Editor",
+        "text": "# Text Editor"
+    }
+}
