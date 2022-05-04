@@ -2,6 +2,8 @@
     "server": false,
     "port": 2323,
     "tabURL": "",
+    "docs": "https://google.com",
+    "docsInstall": "https://instagram.com",
     "state": true,
     "theme": "dark",
     "page": "auth",

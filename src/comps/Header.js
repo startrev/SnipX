@@ -3,7 +3,7 @@ import './Icon.js'
 import manifest from '../../manifest.json' assert {type: 'json'}
 
 chrome.storage.local.get(function(result) {
-    let theme,page,state
+    let theme,page,state,docs = result.docs
 
     result.state === true ? state = 'toggle_on': state = 'toggle_off'
     result.theme === 'dark' ? theme = 'light_mode': theme = 'dark_mode'
@@ -12,7 +12,7 @@ chrome.storage.local.get(function(result) {
     const header = 
     `<header>
         <div>
-            <snipx-logo text="${manifest.name}"></snipx-logo>
+            <snipx-logo href="${docs}" text="${manifest.name}"></snipx-logo>
         </div>
         <div>
             <snipx-icon icon="${state}"></snipx-icon>
