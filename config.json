@@ -2,6 +2,7 @@
     "server": false,
     "port": 2323,
     "tabURL": "",
+    "currentFile": "",
     "docs": "https://google.com",
     "docsInstall": "https://instagram.com",
     "state": true,

@@ -43,4 +43,20 @@ chrome.tabs.query({ active: true, currentWindow: true }, ([currentTab]) => {
     let currentTabURL = urlHandler(currentTab.url)
     chrome.storage.local.set({'tabURL': currentTabURL})
     if(document.getElementById('tabURL')) document.getElementById('tabURL').innerText = currentTabURL
+
+    chrome.storage.local.get(function(result) {
+        // Set file data
+        let xhr = new XMLHttpRequest()
+        xhr.onreadystatechange = function() {
+            if(this.readyState == 4 && this.status == 200) {
+                if(document.querySelector('textarea')) document.querySelector('textarea').innerHTML = xhr.responseText
+                chrome.storage.local.set({'currentFile': xhr.responseText})
+            }
+            else {
+                chrome.storage.local.set({'currentFile': result.editorText[result.editor]})
+            }
+        }
+        xhr.open("GET", `http://localhost:${result.port}/${result.tabURL}/${result.tabURL}.${result.editor}`, true)
+        xhr.send()
+    })
 })

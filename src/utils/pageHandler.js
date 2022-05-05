@@ -6,6 +6,7 @@ export default function pageHandler(node) {
                     chrome.storage.local.set({'page': 'editor'})
                     document.querySelector('snipx-page').innerHTML = '<snipx-editor></snipx-editor>'
                     document.getElementById('tabURL').innerText = result.tabURL
+                    document.querySelector('textarea').innerHTML = result.currentFile
                 }
                 else {
                     chrome.storage.local.set({'page': 'auth'})
@@ -23,6 +24,7 @@ export default function pageHandler(node) {
                 node.innerHTML = 'account_circle'
                 document.querySelector('snipx-page').innerHTML = '<snipx-editor></snipx-editor>'
                 document.getElementById('tabURL').innerText = result.tabURL
+                document.querySelector('textarea').innerHTML = result.currentFile
                 break
         }
     })

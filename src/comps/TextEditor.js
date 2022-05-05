@@ -5,12 +5,13 @@ export default (function() {
             autocomplete="false" 
             autocorrect="false" 
             autocapitalize="false" 
-            spellcheck="false">${result.editorText[result.editor]}</textarea>`
+            spellcheck="false"></textarea>`
     
         class SnipxTextEditor extends HTMLElement {
             constructor() {
                 super()
                 this.innerHTML = textEditor
+                this.querySelector('textarea').innerHTML = result.editorText[result.editor]
             }
 
             hoverEvent(e) { result.editorLock ? e.target.disabled = true : e.target.disabled = false }
