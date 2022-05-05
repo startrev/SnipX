@@ -1,5 +1,7 @@
 import './Icon.js'
 import editorChange from '../utils/editorChange.js'
+import editorSave from '../utils/editorSave.js'
+import editorClear from '../utils/editorClear.js'
 
 export default (function() {
     chrome.storage.local.get(function(result) {
@@ -32,19 +34,34 @@ export default (function() {
             constructor() {
                 super()
                 this.innerHTML = menu
+                
                 this.selectElement = this.querySelector('select')
+                this.saveElement = this.querySelector('#editorSave')
+                this.clearElement = this.querySelector('#editorClear')
+
                 this.selectElement.value = result.editor
                 this.querySelector('#tabURL').innerText = result.tabURL
+            }
+
+            clickEvent(e) {
+                switch(e.target.innerText) {
+                    case 'save': editorSave(e); break
+                    case 'clear': editorClear(e); break
+                }
             }
 
             changeEvent(e) { editorChange(e) }
 
             connectedCallback() {
                 this.selectElement.addEventListener('change', e => this.changeEvent(e))
+                this.saveElement.addEventListener('click', e => this.clickEvent(e))
+                this.clearElement.addEventListener('click', e => this.clickEvent(e))
             }
     
             disconnectedCallback() {
                 this.selectElement.removeEventListener('change', this.changeEvent, true)
+                this.saveElement.removeEventListener('click', this.clickEvent, true)
+                this.clearElement.removeEventListener('click', this.clickEvent, true)
             }
         }
         
