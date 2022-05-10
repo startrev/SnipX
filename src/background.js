@@ -15,15 +15,31 @@ chrome.extension.isAllowedIncognitoAccess(function(isAllowedAccess) {
 })
 
 // Runtime Events
-chrome.runtime.onMessage.addListener(function(message, callback) {
-    if(!message) return
-    switch(message.command) {
-        case 'setAlarm':
-            chrome.alarms.create({delayInMinutes: 5}); break
-        case 'runLogic':
-            chrome.tabs.executeScript({file: 'logic.js'}); break
-        case 'changeColor':
-            chrome.tabs.executeScript({code: 'document.body.style.backgroundColor="orange"'}); break
+chrome.runtime.onMessage.addListener(
+    function(request, sender, sendResponse) {
+        if(request.injectCSS) {
+            let 
+                semiPath = request.injectCSS,
+                cssPath = semiPath + '.css'
+
+            fetch(cssPath)
+                .then(response => response.text())
+                .then(text => sendResponse(text))
+                // .catch(error => sendResponse(error))
+
+            return true
+        }
+        if(request.injectJS) {
+            let 
+                semiPath = request.injectJS,
+                jsPath = semiPath + '.js'
+
+            fetch(jsPath)
+                .then(response => response.text())
+                .then(text => sendResponse(text))
+                // .catch(error => sendResponse(error))
+
+            return true
+        }
     }
-    return true
-})
+)

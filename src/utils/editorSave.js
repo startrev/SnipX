@@ -17,6 +17,14 @@ export default function editorSave(e) {
                 xhr.setRequestHeader("Content-type", "application/json")
                 xhr.send(data)
                 chrome.storage.local.set({'currentFile': editor.value})
+
+                if(result.editor === 'css' || result.editor === 'js') {
+                    chrome.tabs.query({active: true, currentWindow: true}, ([currentTab]) => { 
+                        chrome.tabs.sendMessage(currentTab.id, {reloadTab: true}, function(response) {
+                            console.log(response.farewell)
+                        })
+                    })
+                }
             }
         }
     })

@@ -17,12 +17,12 @@ export default (function() {
                     <option value="css">css</option>
                     <option value="js">js</option>
                     <option value="text">text</option>
-                </select>
-                <div>
-                    <snipx-icon icon="${state}"></snipx-icon>
-                    <snipx-icon icon="${lock}"></snipx-icon>
-                </div>
-                <p id="tabURL"></p>
+                </select>`+
+                // <div>
+                //     <snipx-icon icon="${state}"></snipx-icon>
+                //     <snipx-icon icon="${lock}"></snipx-icon>
+                // </div>
+                `<p id="tabURL"></p>
             </div>
             <div>
                 <button class="menu-button" id="editorClear">clear</button>

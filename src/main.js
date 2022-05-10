@@ -4,8 +4,9 @@ import './utils/editorShortcuts.js'
 import './comps/Header.js'
 import './pages/_page.js'
 
-let page = document.querySelector('snipx-page')
-let cssTheme = document.querySelector('#cssTheme')
+let 
+    page = document.querySelector('snipx-page'),
+    cssTheme = document.querySelector('#cssTheme')
 
 chrome.storage.local.get(function(result) {
     // Check if server is active and set in chrome.storage

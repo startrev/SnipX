@@ -1,10 +1,11 @@
 {
     "name": "SnipX",
-    "version": "0.3.0",
+    "version": "0.4.0",
     "manifest_version": 3,
-    "description": "...",
+    "description": "injects css / js into your current tab via web extension",
     "action": {"default_popup": "src/index.html"},
     "background": {"service_worker": "src/background.js"},
+    "host_permissions": ["http://localhost:*/"],
     "permissions": [
       "unlimitedStorage",
       "activeTab",
@@ -13,7 +14,12 @@
       "tabs"
     ],
     "web_accessible_resources": [{
-      "resources": ["config.json"],
+      "resources": [
+        "config.json",
+        "api/public/*/*.css",
+        "api/public/*/*.js",
+        "api/public/*/*.text"
+      ],
       "matches": ["<all_urls>"]
     }],
     "content_scripts": [
