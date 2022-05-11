@@ -21,31 +21,22 @@
 [![Forks][forks-shield]][forks-url]
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
-[![MIT License][license-shield]][license-url]
-[![LinkedIn][linkedin-shield]][linkedin-url]
-
 
 
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/othneildrew/Best-README-Template">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
-  </a>
 
-  <h3 align="center">Best-README-Template</h3>
+
+  <h1 align="center">SnipX</h1>
 
   <p align="center">
-    An awesome README template to jumpstart your projects!
-    <br />
-    <a href="https://github.com/othneildrew/Best-README-Template"><strong>Explore the docs »</strong></a>
-    <br />
-    <br />
-    <a href="https://github.com/othneildrew/Best-README-Template">View Demo</a>
+    Injects CSS and JS into your current browser tab.<br>
+    <a href="https://github.com/startrev/SnipX/issues">Report Bug</a>
     ·
-    <a href="https://github.com/othneildrew/Best-README-Template/issues">Report Bug</a>
+    <a href="https://github.com/startrev/SnipX/issues">Request Feature</a>
     ·
-    <a href="https://github.com/othneildrew/Best-README-Template/issues">Request Feature</a>
+    <a href="https://github.com/startrev/SnipX">View Demo</a>
   </p>
 </div>
 
@@ -56,15 +47,16 @@
   <summary>Table of Contents</summary>
   <ol>
     <li>
-      <a href="#about-the-project">About The Project</a>
+      <a href="#introducing-snipx">Introducing SnipX</a>
       <ul>
         <li><a href="#built-with">Built With</a></li>
+        <li><a href="#making-snipx">Making SnipX</a></li>
       </ul>
     </li>
     <li>
       <a href="#getting-started">Getting Started</a>
       <ul>
-        <li><a href="#prerequisites">Prerequisites</a></li>
+        <li><a href="#requirements">Requirements</a></li>
         <li><a href="#installation">Installation</a></li>
       </ul>
     </li>
@@ -80,37 +72,44 @@
 
 
 <!-- ABOUT THE PROJECT -->
-## About The Project
+## Introducing SnipX
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+<!-- [![Product Name Screen Shot][product-screenshot]](https://example.com) -->
 
-There are many great README templates available on GitHub; however, I didn't find one that really suited my needs so I created this enhanced one. I want to create a README template so amazing that it'll be the last one you ever need -- I think this is it.
+SnipX is a tool that gives you CSS and JavaScript injecting. It will watch over your files and the moment you make a change, it will inform your browser to reload (inject) the new CSS / JS. This all happens without reloading the page. Most importantly, it works in every browser we've been able to test on.
+
+<!-- There are many great tools available on GitHub; however, We didn't find one that really suited our needs so we created this enhanced one.
+We want to create a simple easy too use so amazing that it'll be the last one you ever need  -->
+-- We think this is it.
 
 Here's why:
-* Your time should be focused on creating something amazing. A project that solves a problem and helps others
-* You shouldn't be doing the same tasks over and over like creating a README from scratch
-* You should implement DRY principles to the rest of your life :smile:
 
-Of course, no one template will serve all projects since your needs may be different. So I'll be adding more in the near future. You may also suggest changes by forking this repo and creating a pull request or opening an issue. Thanks to all the people have contributed to expanding this template!
+* The ability to change your webpage dynamically and remain persistent
+* See and save changes in real time
+* A workflow enhancement
+* Put creativity in focus
+* Inject newly-modified CSS and or JavaScript on every file change (without reloading the page) :smile:
+<!-- * Your time should be focused on creating something amazing. A project that solves a problem and helps others -->
+<!-- * A good improvement to the development workflow as you won't need to refresh and wait until the page is rendered again; you can see and save the changes in real time. -->
 
-Use the `BLANK_README.md` to get started.
+Of course, no one tool will serve all projects since your needs may be different. So we'll be adding more in the near future. You may also suggest changes by forking this repo and creating a pull request or opening an issue. Thanks to all the people that have contributed to expanding this!
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
+### Making SnipX
+
+How many times have you found yourself editing and tuning up CSS or JavaScript code right in the browser, then refreshing the page only to lose all of your changes? Improving development workflows that can meet personal needs can help web developers to be more efficient and deliver a higher quality final product.
 
 
 ### Built With
 
-This section should list any major frameworks/libraries used to bootstrap your project. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
+Major frameworks/libraries used to bootstrap the project.
 
-* [Next.js](https://nextjs.org/)
-* [React.js](https://reactjs.org/)
-* [Vue.js](https://vuejs.org/)
-* [Angular](https://angular.io/)
-* [Svelte](https://svelte.dev/)
-* [Laravel](https://laravel.com)
-* [Bootstrap](https://getbootstrap.com)
-* [JQuery](https://jquery.com)
+* [HTML5](https://developer.mozilla.org/en-US/docs/Glossary/HTML5)
+* [CSS3](https://developer.mozilla.org/en-US/docs/Web/CSS)
+* [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+* [Express](https://expressjs.com)
+* [Node.js](https://nodejs.org/en/)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -119,12 +118,12 @@ This section should list any major frameworks/libraries used to bootstrap your p
 <!-- GETTING STARTED -->
 ## Getting Started
 
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
+Instructions on setting up your project locally.
+To get a local copy up and running follow these simple steps.
 
-### Prerequisites
+### Requirements
 
-This is an example of how to list things you need to use the software and how to install them.
+Things you need to use the software and how to install them. You've installed the latest versions of [Node.js](https://nodejs.org/en/) and [npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm).
 * npm
   ```sh
   npm install npm@latest -g
@@ -132,20 +131,19 @@ This is an example of how to list things you need to use the software and how to
 
 ### Installation
 
-_Below is an example of how you can instruct your audience on installing and setting up your app. This template doesn't rely on any external dependencies or services._
+_Instructions on installing and setting up SnipX._
 
-1. Get a free API Key at [https://example.com](https://example.com)
-2. Clone the repo
+0. Clone the repo
    ```sh
-   git clone https://github.com/your_username_/Project-Name.git
+   git clone https://github.com/startrev/SnipX.git
    ```
-3. Install NPM packages
+1. Install NPM packages
    ```sh
    npm install
    ```
-4. Enter your API in `config.js`
-   ```js
-   const API_KEY = 'ENTER YOUR API';
+2. Start your server `server.js`
+   ```sh
+   npm start
    ```
 
 <p align="right">(<a href="#top">back to top</a>)</p>
@@ -155,9 +153,8 @@ _Below is an example of how you can instruct your audience on installing and set
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
+Useful examples of how SnipX can be used.
 
-_For more examples, please refer to the [Documentation](https://example.com)_
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -166,15 +163,13 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 <!-- ROADMAP -->
 ## Roadmap
 
-- [x] Add Changelog
-- [x] Add back to top links
-- [ ] Add Additional Templates w/ Examples
-- [ ] Add "components" document to easily copy & paste sections of the readme
-- [ ] Multi-language Support
-    - [ ] Chinese
-    - [ ] Spanish
+- [x] Add Browser-Sync
+- [x] Add dark/light mode
+- [ ] Create documentation
+- [ ] Better event handling
 
-See the [open issues](https://github.com/othneildrew/Best-README-Template/issues) for a full list of proposed features (and known issues).
+
+See the [open issues](https://github.com/startrev/SnipX/issues) for a full list of proposed features (and known issues).
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -189,8 +184,8 @@ If you have a suggestion that would make this better, please fork the repo and c
 Don't forget to give the project a star! Thanks again!
 
 1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+2. Create your Feature Branch (`git checkout -b feature/feature_name`)
+3. Commit your Changes (`git commit -m 'type(scope): add AmazingFeature'`)
 4. Push to the Branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
@@ -201,7 +196,7 @@ Don't forget to give the project a star! Thanks again!
 <!-- LICENSE -->
 ## License
 
-Distributed under the MIT License. See `LICENSE.txt` for more information.
+Distributed under the MIT License. See [`LICENSE`](https://github.com/startrev/SnipX/blob/main/LICENSE) for more information.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -210,9 +205,9 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 <!-- CONTACT -->
 ## Contact
 
-Your Name - [@your_twitter](https://twitter.com/your_username) - email@example.com
+Email: [contact@startrev.com](contact@startrev.com/)
 
-Project Link: [https://github.com/your_username/repo_name](https://github.com/your_username/repo_name)
+Project Link: [github.com/startrev/SnipX](https://github.com/startrev/SnipX)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -221,16 +216,8 @@ Project Link: [https://github.com/your_username/repo_name](https://github.com/yo
 <!-- ACKNOWLEDGMENTS -->
 ## Acknowledgments
 
-Use this space to list resources you find helpful and would like to give credit to. I've included a few of my favorites to kick things off!
-
-* [Choose an Open Source License](https://choosealicense.com)
-* [GitHub Emoji Cheat Sheet](https://www.webpagefx.com/tools/emoji-cheat-sheet)
-* [Malven's Flexbox Cheatsheet](https://flexbox.malven.co/)
-* [Malven's Grid Cheatsheet](https://grid.malven.co/)
-* [Img Shields](https://shields.io)
-* [GitHub Pages](https://pages.github.com)
-* [Font Awesome](https://fontawesome.com)
-* [React Icons](https://react-icons.github.io/react-icons/search)
+* [Reset CSS](https://meyerweb.com/eric/tools/css/reset/)
+* [Material Icons](https://mui.com/material-ui/material-icons/)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -238,16 +225,14 @@ Use this space to list resources you find helpful and would like to give credit 
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/othneildrew/Best-README-Template.svg?style=for-the-badge
-[contributors-url]: https://github.com/othneildrew/Best-README-Template/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/othneildrew/Best-README-Template.svg?style=for-the-badge
-[forks-url]: https://github.com/othneildrew/Best-README-Template/network/members
-[stars-shield]: https://img.shields.io/github/stars/othneildrew/Best-README-Template.svg?style=for-the-badge
-[stars-url]: https://github.com/othneildrew/Best-README-Template/stargazers
-[issues-shield]: https://img.shields.io/github/issues/othneildrew/Best-README-Template.svg?style=for-the-badge
-[issues-url]: https://github.com/othneildrew/Best-README-Template/issues
-[license-shield]: https://img.shields.io/github/license/othneildrew/Best-README-Template.svg?style=for-the-badge
-[license-url]: https://github.com/othneildrew/Best-README-Template/blob/master/LICENSE.txt
-[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
-[linkedin-url]: https://linkedin.com/in/othneildrew
+[contributors-shield]: https://img.shields.io/github/contributors/startrev/SnipX.svg?style=for-the-badge
+[contributors-url]: https://github.com/startrev/SnipX/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/startrev/SnipX.svg?style=for-the-badge
+[forks-url]: https://github.com/startrev/SnipX/network/members
+[stars-shield]: https://img.shields.io/github/stars/startrev/SnipX.svg?style=for-the-badge
+[stars-url]: https://github.com/startrev/SnipX/stargazers
+[issues-shield]: https://img.shields.io/github/issues/startrev/SnipX.svg?style=for-the-badge
+[issues-url]: https://github.com/startrev/SnipX/issues
+[license-shield]: https://img.shields.io/github/license/startrev/SnipX.svg?style=for-the-badge
+[license-url]: https://github.com/startrev/SnipX/blob/master/LICENSE.txt
 [product-screenshot]: images/screenshot.png
