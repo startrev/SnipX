@@ -24,9 +24,9 @@ export default (function() {
                 // </div>
                 `<p id="tabURL"></p>
             </div>
-            <div>
-                <button class="menu-button" id="editorClear">clear</button>
-                <button class="menu-button" id="editorSave">save</button>
+            <div>`+
+                // <button class="menu-button" id="editorClear">clear</button>
+                `<button class="menu-button" id="editorSave">save</button>
             </div>
         </aside>`
         
@@ -55,13 +55,13 @@ export default (function() {
             connectedCallback() {
                 this.selectElement.addEventListener('change', e => this.changeEvent(e))
                 this.saveElement.addEventListener('click', e => this.clickEvent(e))
-                this.clearElement.addEventListener('click', e => this.clickEvent(e))
+                // this.clearElement.addEventListener('click', e => this.clickEvent(e))
             }
     
             disconnectedCallback() {
                 this.selectElement.removeEventListener('change', this.changeEvent, true)
                 this.saveElement.removeEventListener('click', this.clickEvent, true)
-                this.clearElement.removeEventListener('click', this.clickEvent, true)
+                // this.clearElement.removeEventListener('click', this.clickEvent, true)
             }
         }
         
