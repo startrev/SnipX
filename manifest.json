@@ -2,7 +2,7 @@
     "name": "SnipX",
     "version": "0.4.0",
     "manifest_version": 3,
-    "description": "injects css / js into your current tab via web extension",
+    "description": "Injects CSS and JS snippets into your current browser tab.",
     "action": {"default_popup": "src/index.html"},
     "background": {"service_worker": "src/background.js"},
     "host_permissions": ["http://localhost:*/"],
