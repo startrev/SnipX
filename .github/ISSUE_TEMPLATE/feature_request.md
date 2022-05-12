@@ -1,9 +1,9 @@
 ---
-name: Feature request
-about: Suggest an idea for this project
-title: ''
-labels: ''
-assignees: ''
+name: Feature Request
+about: Suggest an idea for this SnipX!
+title: '[Feat]: '
+labels: 'feat'
+assignees: 'jaayperez'
 
 ---
 
