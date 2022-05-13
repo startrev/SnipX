@@ -1,0 +1,25 @@
+/* 
+  URL: www.youtube.com
+  Type: CSS
+
+  The following snippet recolors 
+  Youtube's main components. Dive 
+  deeper to truly make it a custom
+  experience!
+*/
+
+#meta,
+#items,
+#container,
+#contents,
+iron-selector,
+ytd-watch-flexy,
+.ytd-page-manager,
+#guide-inner-content {
+  background: #292d3e !important;
+}
+
+.header,
+.ytd-searchbox-spt {
+  background: #1b1e2b !important;
+}
