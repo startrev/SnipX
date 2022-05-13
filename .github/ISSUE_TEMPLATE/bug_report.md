@@ -1,6 +1,6 @@
 ---
 name: Bug Report
-about: Please fill in a report to help us improve SnipX.
+about: Please fill in a Bug Report to help us improve SnipX.
 title: '[Fix]: '
 labels: 'fix'
 assignees: 'arakilian0'

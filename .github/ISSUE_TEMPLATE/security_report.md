@@ -1,6 +1,6 @@
 ---
 name: Security Report
-about: Please fill in a report to help us improve SnipX.
+about: Please fill in a Security Report to help us stabalize SnipX.
 title: '[Security]: '
 labels: 'security'
 assignees: 'arakilian0'

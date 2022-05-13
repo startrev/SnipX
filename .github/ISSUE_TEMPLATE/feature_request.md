@@ -1,6 +1,6 @@
 ---
 name: Feature Request
-about: Suggest an idea for this SnipX!
+about: Have an idea for SnipX? Suggest it here!
 title: '[Feat]: '
 labels: 'feat'
 assignees: 'jaayperez'
