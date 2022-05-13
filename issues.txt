@@ -1,5 +1,0 @@
-- Opening SnipX on profile page requires a double click to go back.
-- Changing theme on profile page, causes page-change to editor.
-- Better server-is-live check. Add icon on header(green/red). Use ajax.
-- Better event handling. Use 'location.reload()' less!
-- Using 'Tab' in the editor breaks the history. 'ctrl+z' doesn't work.
