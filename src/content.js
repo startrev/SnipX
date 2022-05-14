@@ -78,11 +78,5 @@ chrome.runtime.onMessage.addListener(
             console.log('true')
             sendResponse({farewell: "goodbye"})
         }
-        if(request.appState === false) {
-            // handle
-            // window.location.reload()
-            console.log('false')
-            sendResponse({farewell: "goodbye"})
-        }
     }
 )
