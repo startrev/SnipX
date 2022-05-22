@@ -2,7 +2,7 @@
 
 🎉 First off, thanks for taking the time to contribute! 🎉  
 
-The following is a set of guidelines for contributing to Cola.css. These are mostly guidelines, not rules. Use your best judgment, and feel free to propose changes to this document in a pull request. 
+The following is a set of guidelines for contributing to Cola.css. These are mostly guidelines, not rules. Use your best judgment, and feel free to propose changes to this document in a pull request.
 Let's build open source software together!  
 
 ## Code of Conduct
@@ -23,7 +23,7 @@ Our tracker utilizes eight labels to help organize and identify. Here's what the
 - ![Github Label](https://img.shields.io/static/v1?label=label&message=fix&color=eb5a46&style=for-the-badge)
 - ![Github Label](https://img.shields.io/static/v1?label=label&message=docs&color=89609e&style=for-the-badge)
 - ![Github Label](https://img.shields.io/static/v1?label=label&message=perf&color=f4fffd&style=for-the-badge)
-- ![Github Label](https://img.shields.io/static/v1?label=label&message=chore&color=519839&style=for-the-badge)
+- ![Github Label](https://img.shields.io/static/v1?label=label&message=build&color=519839&style=for-the-badge)
 - ![Github Label](https://img.shields.io/static/v1?label=label&message=feat&color=055a8c&style=for-the-badge)
 - ![Github Label](https://img.shields.io/static/v1?label=label&message=style&color=B70D5F&style=for-the-badge)
 - ![Github Label](https://img.shields.io/static/v1?label=label&message=refactor&color=ff9f1a&style=for-the-badge)
