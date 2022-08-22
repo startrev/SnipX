@@ -5,6 +5,7 @@ import express from 'express'
 import bodyParser from 'body-parser'
 
 // Routes
+import getRouter from './api/get.js'
 import postRouter from './api/post.js'
 
 // Config
@@ -24,6 +25,7 @@ app.use(bodyParser.urlencoded({extended: true}))
 app.use(express.static(path.join(...snipxPublicPath)))
 
 // Express Router Routes
+app.use('/api/get', getRouter)
 app.use('/api/post', postRouter)
 
 // Express listen on user specified Port
