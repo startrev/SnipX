@@ -1,3 +1,5 @@
 node_modules/
 package-lock*
-api/public
+api/public/**/*.css
+api/public/**/*.js
+api/public/**/*.text
