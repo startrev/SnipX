@@ -6,14 +6,6 @@ chrome.runtime.onInstalled.addListener(function() {
         .then(json =>  chrome.storage.local.set(json))
 })
 
-// Incognito Access
-chrome.extension.isAllowedIncognitoAccess(function(isAllowedAccess) {
-    if(isAllowedAccess) {
-        console.log('we have incognito access')
-        return
-    }
-})
-
 // Runtime Events
 chrome.runtime.onMessage.addListener(
     function(request, sender, sendResponse) {
