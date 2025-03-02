@@ -1,6 +1,6 @@
 import './Logo.js'
 import './Icon.js'
-import manifest from '../../manifest.json' assert {type: 'json'}
+import manifest from '../../manifest.json' with {type: 'json'}
 
 chrome.storage.local.get(function(result) {
     let theme,page,state,docs = result.docs
